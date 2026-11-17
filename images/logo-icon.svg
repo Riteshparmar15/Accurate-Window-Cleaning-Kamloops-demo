@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <!-- Modern Vibrant Ocean Gradient -->
+    <linearGradient id="cleanBrandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+
+    <!-- Crystal Aqua Gradient for Glass / Squeegee -->
+    <linearGradient id="aquaAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+  </defs>
+
+  <!-- Clean Rounded Square Container -->
+  <rect x="4" y="4" width="92" height="92" rx="22" fill="url(#cleanBrandGrad)" />
+
+  <!-- 4-Pane Clean Modern Window -->
+  <!-- Top-Left Pane (Pure Clean Reflection) -->
+  <rect x="18" y="18" width="28" height="28" rx="5" fill="#ffffff" fill-opacity="0.95" />
+  <!-- Diagonal Gleam -->
+  <path d="M22 18 L34 18 L18 34 L18 22 Z" fill="#bae6fd" />
+
+  <!-- Top-Right Pane (Crystal View) -->
+  <rect x="54" y="18" width="28" height="28" rx="5" fill="#ffffff" fill-opacity="0.92" />
+  <path d="M58 18 L70 18 L54 34 L54 22 Z" fill="#bae6fd" />
+
+  <!-- Bottom-Left Pane -->
+  <rect x="18" y="54" width="28" height="28" rx="5" fill="#ffffff" fill-opacity="0.88" />
+
+  <!-- Bottom-Right Pane -->
+  <rect x="54" y="54" width="28" height="28" rx="5" fill="#ffffff" fill-opacity="0.88" />
+
+  <!-- Precision "Accurate" Center Target / Crosshair Squeegee Accent -->
+  <!-- Center Bullseye Ring -->
+  <circle cx="50" cy="50" r="9" fill="#0284c7" stroke="#ffffff" stroke-width="2.5" />
+  <circle cx="50" cy="50" r="3.5" fill="#38bdf8" />
+
+  <!-- Sleek Modern Squeegee Swipe Accent across right side -->
+  <path d="M42 43 L76 21 C78 20 80 21 80 23 L79 27 C79 28 78 29 77 30 L45 49 Z" fill="#0f172a" fill-opacity="0.85" />
+  <rect x="43" y="43" width="37" height="4" rx="2" transform="rotate(-32 43 43)" fill="url(#aquaAccent)" />
+
+  <!-- Pure Sparkling Star (Signature Clean Finish) -->
+  <path d="M78 14 C78 19 82 20 82 20 C82 20 78 21 78 26 C78 21 74 20 74 20 C74 20 78 19 78 14 Z" fill="#facc15" />
+</svg>

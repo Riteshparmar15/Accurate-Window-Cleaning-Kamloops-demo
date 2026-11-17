@@ -1,0 +1,164 @@
+/* Accurate Window Cleaning Kamloops - Custom CSS Enhancements */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+/* Animations */
+@keyframes subtleZoom {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-subtle-zoom {
+  animation: subtleZoom 25s ease-in-out infinite;
+}
+
+@keyframes bounceSubtle {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-bounce-subtle {
+  animation: bounceSubtle 4s ease-in-out infinite;
+}
+
+/* Before and After slider adjustments */
+#before-after-container {
+  touch-action: pan-y;
+  position: relative;
+}
+
+#before-wrapper {
+  clip-path: inset(0 50% 0 0);
+}
+
+#slider-handle {
+  transition: box-shadow 0.2s ease;
+}
+
+#slider-handle:hover,
+#slider-handle:active {
+  box-shadow: 0 0 16px rgba(14, 165, 233, 0.8);
+}
+
+/* Service Card hover elevation */
+.service-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Story radio pill selection styling */
+.story-option.active {
+  border-color: #0284c7;
+  background-color: rgba(2, 132, 199, 0.15);
+}
+
+.story-option.active i {
+  color: #38bdf8;
+}
+
+/* Glassmorphism details */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Prevent unwanted mobile text selection while dragging comparison */
+.dragging {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Toast Transition */
+#live-toast {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+/* Infinite Smooth Review Marquee Animations */
+@keyframes marqueeScrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeScrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marqueeScrollLeft 55s linear infinite;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marqueeScrollRight 50s linear infinite;
+}
+
+/* Pause marquee on hover so users can easily read any review */
+.marquee-track:hover .animate-marquee-left,
+.marquee-track:hover .animate-marquee-right {
+  animation-play-state: paused;
+}
+
+/* Review Card subtle hover effect */
+.review-marquee-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.review-marquee-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.12);
+}
