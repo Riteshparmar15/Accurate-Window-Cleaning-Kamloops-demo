@@ -189,26 +189,8 @@
         <a href="#faq" class="hover:text-brand-600 transition-colors py-2">FAQ</a>
       </nav>
 
-      <!-- Right CTAs (Desktop & Tablet) -->
-      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-        <!-- Call Button: whitespace-nowrap prevents phone number wrap -->
-        <a href="tel:2505550192"
-          class="hidden sm:flex items-center gap-2 text-slate-800 hover:text-brand-600 font-extrabold text-xs sm:text-sm transition px-2 py-1.5 rounded-lg hover:bg-slate-50 whitespace-nowrap shrink-0">
-          <div
-            class="w-8 h-8 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center border border-brand-200 shrink-0">
-            <i data-lucide="phone" class="w-3.5 h-3.5"></i>
-          </div>
-          <span class="font-bold whitespace-nowrap">(250) 555-0192</span>
-        </a>
-
-        <!-- Quote CTA -->
-        <a href="#quote-calculator"
-          class="bg-brand-600 hover:bg-brand-700 text-white font-extrabold text-xs sm:text-sm px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-lg sm:rounded-xl shadow-md shadow-brand-500/25 transition transform hover:-translate-y-0.5 flex items-center gap-1.5 whitespace-nowrap shrink-0">
-          <span>Get Free Quote</span>
-          <i data-lucide="arrow-right" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
-        </a>
-
-        <!-- Mobile Menu Toggle Button -->
+      <!-- Mobile Menu Toggle -->
+      <div class="flex items-center shrink-0">
         <button id="mobile-menu-toggle"
           class="xl:hidden p-2 rounded-lg sm:rounded-xl text-slate-700 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-brand-500 transition shrink-0"
           aria-label="Toggle Navigation Menu" aria-expanded="false">
@@ -1187,23 +1169,23 @@
           See the Accurate Transformation
         </h2>
         <p class="text-slate-600 text-base">
-          Drag the interactive slider below to inspect the difference between dirty weathered surfaces and our sparkling
-          streak-free finish.
+          Drag the slider to compare real before-and-after results — same room angle, real soil and stains versus the
+          finished clean. Switch tabs for carpet, windows, and driveway.
         </p>
 
         <!-- Gallery Tabs -->
         <div class="flex flex-wrap justify-center gap-2 pt-4" id="gallery-tabs">
-          <button data-tab="windows"
+          <button data-tab="carpet"
             class="gallery-tab-btn active px-4 py-2 rounded-lg text-sm font-bold transition bg-brand-600 text-white shadow-sm">
+            Carpet Deep Clean
+          </button>
+          <button data-tab="windows"
+            class="gallery-tab-btn px-4 py-2 rounded-lg text-sm font-bold transition bg-slate-100 text-slate-700 hover:bg-slate-200">
             Residential Windows
           </button>
           <button data-tab="concrete"
             class="gallery-tab-btn px-4 py-2 rounded-lg text-sm font-bold transition bg-slate-100 text-slate-700 hover:bg-slate-200">
             Driveway Pressure Washing
-          </button>
-          <button data-tab="gutters"
-            class="gallery-tab-btn px-4 py-2 rounded-lg text-sm font-bold transition bg-slate-100 text-slate-700 hover:bg-slate-200">
-            Siding &amp; Gutter Soft Wash
           </button>
         </div>
       </div>
@@ -1216,43 +1198,41 @@
 
           <!-- After Image (Clean) -->
           <img id="after-image"
-            src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=80"
-            alt="Pristine Clean Windows in Kamloops"
-            class="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+            src="images/before-after/carpet-after-clean.jpg"
+            alt="Professionally cleaned living room carpet in Kamloops"
+            class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none" draggable="false" />
           <div
-            class="absolute top-4 right-4 bg-emerald-600/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full shadow pointer-events-none z-10 flex items-center gap-1.5">
-            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-            <span>AFTER (Accurate Clean)</span>
+            class="absolute top-4 right-4 bg-white/95 text-slate-800 text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded shadow-sm pointer-events-none z-10 border border-slate-200">
+            After
           </div>
 
           <!-- Before Image Container (Dirty / Clipped) -->
           <div id="before-wrapper" class="absolute inset-0 overflow-hidden w-full h-full pointer-events-none"
             style="clip-path: inset(0 50% 0 0);">
             <img id="before-image"
-              src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1600&q=80"
-              alt="Grimy Weathered Windows Before Cleaning"
-              class="absolute inset-0 w-full h-full object-cover pointer-events-none filter brightness-75 contrast-125 sepia-[0.3]" />
+              src="images/before-after/carpet-before-messy.jpg"
+              alt="Stained messy living room carpet before cleaning"
+              class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none" draggable="false" />
             <div
-              class="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full shadow pointer-events-none z-10 flex items-center gap-1.5">
-              <i data-lucide="alert-circle" class="w-3.5 h-3.5 text-amber-400"></i>
-              <span>BEFORE</span>
+              class="absolute top-4 left-4 bg-slate-900/90 text-white text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded shadow-sm pointer-events-none z-10">
+              Before
             </div>
           </div>
 
           <!-- Draggable Divider Line & Handle -->
           <div id="slider-handle"
-            class="absolute top-0 bottom-0 left-1/2 -ml-0.5 w-1 bg-white cursor-ew-resize z-20 flex items-center justify-center shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+            class="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize z-20 flex items-center justify-center shadow-[0_0_10px_rgba(0,0,0,0.45)] touch-none"
+            style="left: 50%; transform: translateX(-50%);">
             <div
-              class="w-10 h-10 -ml-[19px] rounded-full bg-brand-600 text-white shadow-xl flex items-center justify-center border-2 border-white transform hover:scale-110 active:scale-95 transition-transform">
+              class="w-10 h-10 rounded-full bg-brand-600 text-white shadow-xl flex items-center justify-center border-2 border-white hover:scale-105 active:scale-95 transition-transform">
               <i data-lucide="chevrons-left-right" class="w-5 h-5"></i>
             </div>
           </div>
 
           <!-- Drag Helper -->
-          <div
-            class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-slate-900/80 text-white text-[11px] font-medium px-3 py-1 rounded-full pointer-events-none z-10 hidden sm:flex items-center gap-1.5">
-            <i data-lucide="move-horizontal" class="w-3.5 h-3.5 text-cyan-400"></i>
-            <span>Drag slider left &amp; right to compare</span>
+          <div id="slider-hint"
+            class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-slate-900/80 text-white text-[11px] font-medium px-3 py-1 rounded pointer-events-none z-10 hidden sm:block">
+            Drag to compare
           </div>
 
         </div>
@@ -1264,8 +1244,8 @@
               <i data-lucide="info" class="w-4 h-4"></i>
             </div>
             <p id="gallery-caption" class="text-xs sm:text-sm text-slate-700">
-              <strong>Residential Window Restoration in Sahali:</strong> Mineral deposit removal and frame scrub using
-              100% deionized purified water.
+              <strong>Carpet Deep Clean in Sahali:</strong> Same living room before and after — muddy footprints, spills,
+              and traffic soil lifted with professional extraction.
             </p>
           </div>
           <a href="#quote-calculator"
@@ -1521,7 +1501,7 @@
       <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-slate-50 to-transparent z-10"></div>
       <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-slate-50 to-transparent z-10"></div>
 
-      <div class="animate-marquee-left gap-6 px-3">
+      <div class="animate-marquee-left flex gap-6 px-3">
         <!-- Review 1 -->
         <div class="review-marquee-card w-[340px] sm:w-[380px] bg-white p-6 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col justify-between shrink-0">
           <div>
@@ -1784,14 +1764,14 @@
     </div>
 
     <!-- ============================================================ -->
-    <!-- MARQUEE ROW 2: Moves in Reverse or Rightward for Dynamic Depth -->
+    <!-- MARQUEE ROW 2: Also floats right → left (slower for depth) -->
     <!-- ============================================================ -->
     <div class="relative w-full overflow-hidden marquee-track">
       <!-- Gradient Edge Fades -->
       <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-slate-50 to-transparent z-10"></div>
       <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-slate-50 to-transparent z-10"></div>
 
-      <div class="animate-marquee-right gap-6 px-3">
+      <div class="animate-marquee-left-slow flex gap-6 px-3">
         <!-- Review 7 -->
         <div class="review-marquee-card w-[340px] sm:w-[380px] bg-white p-6 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col justify-between shrink-0">
           <div>

@@ -1,164 +1,174 @@
-/* Accurate Window Cleaning Kamloops - Custom CSS Enhancements */
+/* Accurate Window Cleaners — London Ontario */
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 85px;
+  scroll-padding-top: 88px;
 }
 
-/* Animations */
-@keyframes subtleZoom {
-  0% {
-    transform: scale(1);
-  }
+body {
+  font-family: "Manrope", system-ui, sans-serif;
+  color: #1a2744;
+  background: #f7f9fc;
+}
 
-  50% {
-    transform: scale(1.04);
-  }
+.font-display {
+  font-family: "Sora", "Manrope", sans-serif;
+}
 
-  100% {
-    transform: scale(1);
+/* Atmosphere */
+.page-glow {
+  background:
+    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(56, 120, 200, 0.18), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% 0%, rgba(232, 112, 48, 0.12), transparent 50%),
+    linear-gradient(180deg, #eef3f9 0%, #f7f9fc 40%, #ffffff 100%);
+}
+
+.hero-plane {
+  background-image:
+    linear-gradient(105deg, rgba(14, 28, 58, 0.82) 0%, rgba(14, 28, 58, 0.55) 45%, rgba(14, 28, 58, 0.25) 100%),
+    url("images/hero-home.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.animate-subtle-zoom {
-  animation: subtleZoom 25s ease-in-out infinite;
+.rise-in {
+  animation: riseIn 0.7s ease-out both;
 }
 
-@keyframes bounceSubtle {
+.rise-in-delay-1 {
+  animation-delay: 0.12s;
+}
 
+.rise-in-delay-2 {
+  animation-delay: 0.24s;
+}
+
+@keyframes floatSoft {
   0%,
   100% {
     transform: translateY(0);
   }
-
   50% {
     transform: translateY(-6px);
   }
 }
 
-.animate-bounce-subtle {
-  animation: bounceSubtle 4s ease-in-out infinite;
+.float-soft {
+  animation: floatSoft 5s ease-in-out infinite;
 }
 
-/* Before and After slider adjustments */
+/* Mobile nav */
+#mobile-menu:not(.hidden) {
+  animation: riseIn 0.25s ease-out;
+}
+
+/* FAQ */
+.faq-item .faq-answer {
+  display: none;
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
+
+.faq-item.open .faq-chevron {
+  transform: rotate(180deg);
+}
+
+/* Form focus */
+.quote-input:focus {
+  outline: none;
+  border-color: #2f5f9e;
+  box-shadow: 0 0 0 3px rgba(47, 95, 158, 0.18);
+}
+
+/* Rate tier highlight */
+.rate-card.featured {
+  border-color: #2f5f9e;
+  box-shadow: 0 16px 40px rgba(26, 39, 68, 0.12);
+}
+
+/* Sticky mobile CTA */
+@media (max-width: 639px) {
+  body {
+    padding-bottom: 72px;
+  }
+}
+
+/* Before / After comparison slider */
 #before-after-container {
-  touch-action: pan-y;
-  position: relative;
+  touch-action: none;
+  user-select: none;
+  cursor: ew-resize;
 }
 
-#before-wrapper {
-  clip-path: inset(0 50% 0 0);
+#before-after-container.is-dragging {
+  cursor: grabbing;
 }
 
 #slider-handle {
-  transition: box-shadow 0.2s ease;
+  will-change: left;
 }
 
-#slider-handle:hover,
-#slider-handle:active {
-  box-shadow: 0 0 16px rgba(14, 165, 233, 0.8);
+#slider-hint {
+  transition: opacity 0.2s ease;
 }
 
-/* Service Card hover elevation */
-.service-card {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+#slider-hint.opacity-0 {
+  opacity: 0;
 }
 
-.service-card:hover {
-  transform: translateY(-4px);
-}
-
-/* Story radio pill selection styling */
-.story-option.active {
-  border-color: #0284c7;
-  background-color: rgba(2, 132, 199, 0.15);
-}
-
-.story-option.active i {
-  color: #38bdf8;
-}
-
-/* Glassmorphism details */
-.glass-panel {
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-/* Prevent unwanted mobile text selection while dragging comparison */
-.dragging {
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f5f9;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
-}
-
-/* Toast Transition */
-#live-toast {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
-}
-
-/* Infinite Smooth Review Marquee Animations */
-@keyframes marqueeScrollLeft {
-  0% {
+/* Reviews marquee — floats right → left */
+@keyframes marquee-rtl {
+  from {
     transform: translateX(0);
   }
-  100% {
+  to {
     transform: translateX(-50%);
   }
 }
 
-@keyframes marqueeScrollRight {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-.animate-marquee-left {
-  display: flex;
-  width: max-content;
-  animation: marqueeScrollLeft 55s linear infinite;
-}
-
+.animate-marquee-left,
+.animate-marquee-left-slow,
 .animate-marquee-right {
   display: flex;
   width: max-content;
-  animation: marqueeScrollRight 50s linear infinite;
+  will-change: transform;
 }
 
-/* Pause marquee on hover so users can easily read any review */
+.animate-marquee-left {
+  animation: marquee-rtl 48s linear infinite;
+}
+
+.animate-marquee-left-slow {
+  animation: marquee-rtl 62s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-rtl 55s linear infinite;
+}
+
 .marquee-track:hover .animate-marquee-left,
+.marquee-track:hover .animate-marquee-left-slow,
 .marquee-track:hover .animate-marquee-right {
   animation-play-state: paused;
 }
 
-/* Review Card subtle hover effect */
-.review-marquee-card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.review-marquee-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.12);
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-left,
+  .animate-marquee-left-slow,
+  .animate-marquee-right {
+    animation: none;
+  }
 }
